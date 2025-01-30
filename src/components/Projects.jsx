@@ -1,6 +1,7 @@
 import React from "react";
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
+import project1 from "../assets/projects/project-c3.jpg";
 
 const Projects = () => {
   return (
@@ -13,6 +14,7 @@ const Projects = () => {
       >
         Projects
       </motion.h1>
+
       <div>
         {PROJECTS.map((project, index) => (
           <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
@@ -32,11 +34,14 @@ const Projects = () => {
             </motion.div>
             I
             <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{opacity: 0, x: 100}}
-            transition={{duration: 1}}
-            className="w-full max-w-xl lg:w-3/4">
-              <h6 className="mb-2 font-semibold">{project.title}</h6>
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 100 }}
+              transition={{ duration: 1 }}
+              className="w-full max-w-xl lg:w-3/4"
+            >
+              
+              <a href={project.URL}>   <h6 className="mb-2 font-semibold">{project.title}</h6>                      </a>
+              
               <p className="mb-4 text-neutral-400">{project.description}</p>
               {project.technologies.map((tech, index) => (
                 <span
@@ -50,6 +55,58 @@ const Projects = () => {
           </div>
         ))}
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* 
+      <div>
+        <div className="mb-8 flex flex-wrap lg:justify-center">
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className="w-full lg:w-1/4"
+          >
+            <img
+              src={project1}
+              width={150}
+              height={150}
+              alt="chatapp"
+              className="mb-6 rounded"
+            />
+          </motion.div>
+          I
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 100 }}
+            transition={{ duration: 1 }}
+            className="w-full max-w-xl lg:w-3/4"
+          >
+            <h6 className="mb-2 font-semibold">ChatBlitz</h6>
+            <p className="mb-4 text-neutral-400">"Architected and developed, a real-time chat application using features like Socket.io, JWT authentication, Zustand state management, and MongoDB ."</p>
+            {project.technologies.map((tech, index) => (
+                <span
+                  key={index}
+                  className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-900"
+                >
+                  {tech}
+                </span>
+              ))}
+            
+          </motion.div>
+        </div>
+         */}
+      {/* </div> */}
     </div>
   );
 };
