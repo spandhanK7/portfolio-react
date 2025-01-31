@@ -1,6 +1,7 @@
 import React from "react";
 import { HERO_CONTENT } from "../constants";
 import { motion } from "framer-motion";
+import { LuDownload } from "react-icons/lu";
 
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
@@ -45,6 +46,11 @@ const Hero = () => {
             </motion.p>
           </div>
         </div>
+        <motion.div variants={container(1.3)}
+              initial="hidden"
+              animate="visible"
+              > <a href="https://drive.google.com/file/d/1-qILka6Wp76-iNntRKKrzJ_FHkli1-RZ/view?usp=sharing" download className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 lg:mx-43 lg:px-10 lg:mt-6 hover:bg-gray-600">my resume <LuDownload/></a>  </motion.div>
+        
       
       </div>
     </div>
